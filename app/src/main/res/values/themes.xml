@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.CutivatingApp1_java" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- 这里可以加一些颜色配置 -->
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CutivatingApp1_java" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+</resources>

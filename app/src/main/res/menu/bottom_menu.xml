@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/Task"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="任务管理"
+            />
+        <item
+            android:id="@+id/Grown"
+            android:icon="@android:drawable/ic_menu_manage"
+            android:title="养成模块"
+
+             />
+        <item
+            android:id="@+id/forum"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="论坛模块"
+            />
+    </menu>
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/menu_task_module"
+            android:title="任务模块">
+            <menu>
+                <item
+                    android:id="@+id/menu_time_study"
+                    android:title="计时页面"/>
+                <item
+                    android:id="@+id/menu_analysis_page"
+                    android:title="分析页面"/>
+                <item
+                    android:id="@+id/menu_submit_page"
+                    android:title="提交任务页面"/>
+                <item
+                    android:id="@+id/menu_completed_page"
+                    android:title="任务完成页面"/>
+            </menu>
+        </item>
+
+        <item
+            android:id="@+id/menu_nurture_module"
+            android:title="养成模块">
+            <!-- 养成模块子菜单 -->
+        </item>
+
+        <item
+            android:id="@+id/menu_forum_module"
+            android:title="论坛模块">
+            <menu>
+                <item
+                    android:id="@+id/menu_forum_main"
+                    android:title="主页面"/>
+                <item
+                    android:id="@+id/menu_forum_hot"
+                    android:title="热点论坛"/>
+            </menu>
+        </item>
+    </group>
+</menu>

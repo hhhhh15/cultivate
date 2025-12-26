@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">叠纸我一定要来</string>
+
+
+    <string-array name="task_date_options">
+        <item>昨日任务</item>
+        <item>今日任务</item>
+        <item>明日任务</item>
+        <item>后天任务</item>
+    </string-array>
+
+    <string-array name="task_difficulty_array">
+        <item>简单</item>
+        <item>中等</item>
+        <item>困难</item>
+    </string-array>
+
+
+
+</resources>

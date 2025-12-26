@@ -1,0 +1,297 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.example.cultivate.utils.Converter" />
+
+        <variable
+            name="submitVm"
+            type="com.example.cultivate.viewmodel.TaskSubmitViewModel" />
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 任务名称 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="任务名称"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/et_task_name"
+                android:text="@={submitVm.taskName}"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="任务名称"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <!-- 总任务数 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="总任务数"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/et_task_count"
+                android:text="@={Converter.intVmToStringView(submitVm.taskCount)}"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="总任务数"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <!-- 起始时间 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="起始时间"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="8dp" />
+
+<!--            android:text="@={Converter.localDateToString(submitVm.startTime)}"-->
+            <TextView
+                android:id="@+id/tv_start_time"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="选择日期"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"
+                app:startTimeText="@={submitVm.startTime}"
+                android:background="?android:attr/selectableItemBackground" />
+        </LinearLayout>
+
+        <!-- 截至时间 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="截至时间"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="8dp" />
+<!-- android:text="@={Converter.localDateToString(submitVm.endTime)}"-->
+            <TextView
+                android:id="@+id/tv_end_time"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="选择日期"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"
+                app:deadlineTimeText="@={submitVm.endTime}"
+                android:background="?android:attr/selectableItemBackground" />
+        </LinearLayout>
+
+        <!-- 任务难度（RadioGroup） -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="任务难度"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="8dp" />
+
+            <RadioGroup
+                android:id="@+id/radio_group_difficulty"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                app:difficulty="@={submitVm.taskDifficulty}">
+
+                <RadioButton
+                    android:id="@+id/radio_easy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="简单" />
+
+                <RadioButton
+                    android:id="@+id/radio_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="中等" />
+
+                <RadioButton
+                    android:id="@+id/radio_hard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="困难" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- 任务科目 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="任务科目"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="8dp" />
+
+            <Spinner
+                android:id="@+id/spinner_subject"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:entries="@{submitVm.subjectList}"
+                app:selectedItem="@={submitVm.taskSubject}" />
+        </LinearLayout>
+
+        <!-- 任务划分方式 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="任务划分方式"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="8dp" />
+
+            <RadioGroup
+                android:id="@+id/radio_group_division"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                app:divide="@={submitVm.taskType}">
+                <RadioButton
+                    android:id="@+id/radio_divide_by_system"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="系统自动" />
+
+                <RadioButton
+                    android:id="@+id/radio_divide_by_yourself"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="自定义子任务" />
+
+
+            </RadioGroup>
+            <!-- 自定义子任务输入框 -->
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/subtask_layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/add_subtask"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="添加子任务"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+                <Button
+                    android:id="@+id/save_all_subtask"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="保存"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/subtaskContainer"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:gravity="center_vertical">
+<!--
+
+                <EditText
+                    android:id="@+id/et_custom_subtasks"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:hint="请输入子任务（每行一个）"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:background="@android:drawable/edit_text"
+                    android:padding="8dp" />
+
+
+                <Button
+                    android:id="@+id/btn_delete_subtask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="删除"
+                    android:layout_marginStart="8dp"/>    -->
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 提交按钮 -->
+        <Button
+            android:id="@+id/btn_submit_task"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="提交任务"
+            android:textSize="20dp"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,184 @@
+<!-- dialog_layout.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:background="@drawable/dialog_background">
+
+    <!-- 第一行：任务名称 + 右上角X按钮 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical">
+
+        <!-- 任务名称 -->
+        <TextView
+            android:id="@+id/taskName"
+            android:text="开发任务名称"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:paddingBottom="10dp"
+            android:layout_gravity="center_vertical"/>
+
+        <!-- 设置背景图片的组件（放在右侧）-->
+        <ImageView
+            android:id="@+id/editCardBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_gallery"
+            android:contentDescription="设置背景图片" />
+        <!-- 右上角的 X 按钮 -->
+        <ImageView
+            android:id="@+id/btnClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="关闭弹窗" />
+    </LinearLayout>
+
+    <!-- 分割线 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/dividerHorizontal" />
+
+    <!-- 按钮区 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/menu_dialog_select"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+
+        <!-- 修改任务按钮 -->
+        <Button
+            android:id="@+id/btnModifyTask"
+            android:text="修改任务"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <!-- 设置用时按钮 -->
+        <Button
+            android:id="@+id/btnSetTime"
+            android:text="设置用时"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp" />
+
+        <!-- 删除任务按钮 -->
+        <Button
+            android:id="@+id/btnDeleteTask"
+            android:text="删除任务"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+
+    <!-- 分割线 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/dividerHorizontal" />
+
+    <!-- 修改任务的弹窗和设置用时的内容（用空白区域分隔） -->
+    <LinearLayout
+        android:id="@+id/modifyTaskLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <!-- 修改任务的难度 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:text="任务难度："
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/taskDifficultySpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/task_difficulty_array" />
+        </LinearLayout>
+
+        <!-- 修改任务的截至时间 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:text="截至时间："
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/taskDeadline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="输入截至时间"
+                android:inputType="date" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 设置用时的弹窗 -->
+    <LinearLayout
+        android:id="@+id/setTimeLayout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone">
+
+
+        <!-- 设置用时的输入框 -->
+        <TextView
+            android:text="设置任务用时:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"/>
+
+        <TextView
+            android:id="@+id/setTaskTotalTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入用时"
+            android:inputType="number" />
+    </LinearLayout>
+
+<!--    分割线-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/dividerHorizontal" />
+
+    <Button
+        android:id="@+id/btnsave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确定"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal" />
+
+
+</LinearLayout>
