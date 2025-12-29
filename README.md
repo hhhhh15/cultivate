@@ -49,10 +49,10 @@
 
 ## ❤ 具体页面展示
 ### **任务页面展示**
-<img width="320" height="450" alt="image" src="https://github.com/user-attachments/assets/94f62918-95f7-4aab-a15a-73fa7a6ba946" />
+<img width="220" height="450" alt="image" src="https://github.com/user-attachments/assets/94f62918-95f7-4aab-a15a-73fa7a6ba946" />
 
 ### **虚拟人物展示**
-<img width="320" height="450" alt="image" src="https://github.com/user-attachments/assets/4d49358e-9548-42ab-8b30-cb6b557f845e" />
+<img width="220" height="450" alt="image" src="https://github.com/user-attachments/assets/4d49358e-9548-42ab-8b30-cb6b557f845e" />
 
 
 ## 🚀 安装与运行
