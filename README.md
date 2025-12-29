@@ -30,7 +30,7 @@
 
 ### **Android**
 - Kotlin / MVVM  
-- ViewModel、LiveData、DataBinding、Room、Navigation  
+- ViewModel、LiveData、viewPaper2、DataBinding、Room、Navigation  
 - Retrofit + OkHttp  
 - OpenGL ES、JNI、NDK  
 - Live2D Cubism SDK for Native  
@@ -46,6 +46,14 @@
 - MQTT 通信协议
 
 ---
+
+## ❤ 具体页面展示
+### **任务页面展示**
+<img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/94f62918-95f7-4aab-a15a-73fa7a6ba946" />
+
+### **虚拟人物展示**
+![080cb6d075b608e18988ffff7cca23c](https://github.com/user-attachments/assets/4d49358e-9548-42ab-8b30-cb6b557f845e)
+
 
 ## 🚀 安装与运行
 
