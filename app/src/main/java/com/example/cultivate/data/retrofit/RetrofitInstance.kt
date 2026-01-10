@@ -41,7 +41,7 @@ object RetrofitInstance {
         .build()
 
     val retrofit= Retrofit.Builder()
-        .baseUrl("http://192.168.1.27:8081/")
+        .baseUrl("http://192.xx.xx.xx:8081/")
         .client(client)  // ✅ 绑定 OkHttpClient，否则拦截器不会生效
 //        .addConverterFactory(GsonConverterFactory.create())
         .addConverterFactory(GsonConverterFactory.create(gson)) // ✅ 使用自定义 gson
